@@ -44,8 +44,8 @@ dd.style.width = "100px";
 // dd.style.color = "green";
 
 // // Create Element
-// let heading3 = document.createElement("h3");
-// heading3.textContent = "Heading 3";
+// let heading3 = document.createElement("h3"); <h3></h3>
+// heading3.textContent = "Heading 3";<h3>Heading 3</h3>
 // document.body.appendChild(heading3);
 
 let arr = ["as", "dfdf", "erew", "rtrt"];

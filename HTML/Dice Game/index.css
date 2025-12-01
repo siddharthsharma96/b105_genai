@@ -139,3 +139,16 @@ main {
   overflow: hidden;
   display: flex;
 }
+
+.player--winner {
+  background-color: #2f2f2f;
+}
+
+.player--winner .name {
+  font-size: 700;
+  color: #c7365f;
+}
+
+.hidden {
+  display: none;
+}
