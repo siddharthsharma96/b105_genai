@@ -69,7 +69,6 @@
 // };
 
 // promiseHandler();
-
 //Fetch an api
 const apiHandler = async () => {
   try {
