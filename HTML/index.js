@@ -1,17 +1,17 @@
-// console.log(a);
-// // hoisting
+console.log(a);
+// hoisting
 
-// var a = 10;
-// a = 4564;
-// console.log(a);
+var a = 10;
+a = 4564;
+console.log(a);
 
-// // Es6 let and const
-// // console.log(b);
-// // temporal dead zone
-// // referenceError
-// let b = 210;
-// b = 30;
+// Es6 let and const
 // console.log(b);
+// temporal dead zone
+// referenceError
+let b = 210;
+b = 30;
+console.log(b);
 
 // {
 //   let a = 20;
