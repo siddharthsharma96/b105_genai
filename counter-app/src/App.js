@@ -22,7 +22,7 @@ function App() {
   // -  First time after rendering + every time when dependencies change
   // Case 3. Without dependencies Array
   // -  First time after rendering + every time when state/props change
-  // debouncing
+  //
   useEffect(() => {
     if (val < 0) {
       let timer = setTimeout(() => {
