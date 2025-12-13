@@ -295,7 +295,7 @@
                 "imgName": "food.jpeg",
                 "inStock": 1,
                 "isVeg": 1,
-                "price": 54900
+                "defaultPrice": 54900
               }
             }
           },
@@ -309,7 +309,7 @@
                 "imgName": "pizza.jpeg",
                 "inStock": 1,
                 "isVeg": 1,
-                "price": 64900
+                "defaultPrice": 64900
               }
             }
           },
@@ -322,7 +322,7 @@
                 "description": "7\" Pizza + Stuffed Garlic Bread (1 Dip) + Chicken Wings (2 Dips) + Potato Wedges (1 Dip) + 2 Pepsi + 2 Choco Lava Cake",
                 "imgName": "all.jpeg",
                 "inStock": 1,
-                "price": 84900
+                "defaultPrice": 84900
               }
             }
           },
@@ -335,7 +335,7 @@
                 "description": "14\" Pizza + Stuffed Garlic Bread (1 Dip) + Chicken Wings (2 Dips) + Potato Wedges (1 Dip) + 2 Pepsi + 2 Choco Lava Cake",
                 "imgName": "thali.jpeg",
                 "inStock": 1,
-                "price": 129900
+                "defaultPrice": 129900
               }
             }
           }
@@ -358,7 +358,7 @@
                 "description": "(Chicken Ham + Corn Monster Slice + 1 Chocolava + 1 Mocktail )",
                 "inStock": 1,
                 "imgName": "pizza.jpeg",
-                "price": 29900
+                "defaultPrice": 29900
               }
             }
           },
@@ -373,7 +373,7 @@
                 "description": "(Pineapple + Corn Monster Slice + 1 Chocolava + 1 Mocktail )",
                 "inStock": 1,
                 "isVeg": 1,
-                "price": 29900
+                "defaultPrice": 29900
               }
             }
           }

@@ -1,6 +1,11 @@
+import { useNavigate } from "react-router-dom";
 const RestaurantCard = ({ res, show }) => {
+  const navigate = useNavigate();
   return (
-    <div className="card">
+    <div
+      className="card"
+      onClick={() => navigate(`/restaurant/${res?.info?.id}`)}
+    >
       <img src={`/images/${res.info.cloudinaryImageId}.avif`}></img>
       <div className="card__details">
         <h3 className="card__name">{res?.info?.name}</h3>
