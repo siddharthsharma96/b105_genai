@@ -62,6 +62,7 @@ function App() {
       <Outlet
         context={{
           restaurantData,
+          setRestaurantData,
           loading,
           cartItems,
           setCartItems,

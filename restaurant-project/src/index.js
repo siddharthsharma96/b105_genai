@@ -10,6 +10,8 @@ import Search from "./Pages/Search";
 import Help from "./Pages/Help";
 import Restaurant from "./Pages/Restaurant";
 import PageNotFound from "./Pages/404";
+import CreateRestaurant from "./Pages/CreateRestaurant";
+import CreateRestaurantTwo from "./Pages/CreateRestaurantTwo";
 
 let myRoutes = createBrowserRouter([
   {
@@ -35,6 +37,14 @@ let myRoutes = createBrowserRouter([
       {
         path: "/restaurant/:resId",
         element: <Restaurant></Restaurant>,
+      },
+      {
+        path: "/create",
+        element: <CreateRestaurant></CreateRestaurant>,
+      },
+      {
+        path: "/create2",
+        element: <CreateRestaurantTwo></CreateRestaurantTwo>,
       },
       {
         path: "*",

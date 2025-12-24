@@ -1,5 +1,9 @@
 /* restaurant.css - shared styles for restaurant forms & list */
-
+.errors {
+  font-size: 14px;
+  color: red;
+  margin-bottom: 0px;
+}
 .restaurant {
   margin-top: 110px;
   margin-bottom: 200px;
