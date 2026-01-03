@@ -1,12 +1,9 @@
 import "./../Style/search.css";
 const PopularRestaurant = ({ res }) => {
   return (
-    <div key={res.info.id} className="cuisineContainer">
-      <img
-        src={`images/${res.info.cloudinaryImageId}.avif`}
-        alt={res.info.name}
-      />
-      <p>{res.info.name}</p>
+    <div key={res._id} className="cuisineContainer">
+      <img src={`images/${res.cloudinaryImageId}.avif`} alt={res.name} />
+      <p>{res.name}</p>
     </div>
   );
 };

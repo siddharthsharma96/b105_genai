@@ -12,10 +12,8 @@ const Restaurant = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const foundRestaurantObj = restaurantData.find(
-          (e) => e.info.id === resId
-        );
-        setRestaurant(foundRestaurantObj);
+        // const foundRestaurantObj = restaurantData.find((e) => e._id === resId);
+        // setRestaurant(foundRestaurantObj);
         const response = await fetch("http://localhost:3000/menu.json");
         const data = await response.json();
         setMenu(data);
@@ -23,6 +21,18 @@ const Restaurant = () => {
         console.log(err);
       }
     };
+    const fetchApi = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost:9000/api/v1/restaurant/${resId}`
+        );
+        const data = await response.json();
+        setRestaurant(data.data.restaurant);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchApi();
     fetchData();
   }, [restaurantData]);
   console.log(restaurant);
@@ -30,11 +40,11 @@ const Restaurant = () => {
   return (
     <div className="restaurant">
       <div className="restaurant__breadcrumb">
-        <span>Home / Noida /{restaurant?.info?.name}</span>
+        <span>Home / Noida /{restaurant?.name}</span>
       </div>
       <div className="restaurant__container">
         <div className="restaurant__info">
-          <p>{restaurant?.info?.name}</p>
+          <p>{restaurant?.name}</p>
           <div className="restaurant__services">
             <p>Order Online</p>
             <p>DineOut</p>

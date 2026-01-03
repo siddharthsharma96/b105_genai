@@ -12,6 +12,8 @@ import Restaurant from "./Pages/Restaurant";
 import PageNotFound from "./Pages/404";
 import CreateRestaurant from "./Pages/CreateRestaurant";
 import CreateRestaurantTwo from "./Pages/CreateRestaurantTwo";
+import Login from "./Pages/Login";
+import Signup from "./Pages/Signup";
 
 let myRoutes = createBrowserRouter([
   {
@@ -37,6 +39,14 @@ let myRoutes = createBrowserRouter([
       {
         path: "/restaurant/:resId",
         element: <Restaurant></Restaurant>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/signup",
+        element: <Signup></Signup>,
       },
       {
         path: "/create",

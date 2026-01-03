@@ -12,9 +12,9 @@ function App() {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const response = await fetch("http://localhost:3000/Restaurant.json");
+        const response = await fetch("http://localhost:9000/api/v1/restaurant");
         const data = await response.json();
-        setRestaurantData(data);
+        setRestaurantData(data.data);
       } catch (err) {
         console.log(err);
       } finally {

@@ -10,30 +10,53 @@ const CreateRestaurantTwo = () => {
     reset,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => {
-    console.log(data);
-    data.cuisines = data.cuisines.split(",");
-    setRestaurantData([
-      ...restaurantData,
-      {
-        info: {
-          id: restaurantData.length,
-          name: data.name,
-          cloudinaryImageId: data.cloudinaryImageId,
-          locality: data.locality,
-          areaName: data.areaName,
-          costForTwo: data.costForTwo,
-          cuisines: data.cuisines,
-          avgRating: data.avgRating,
-          avgRatingString: data.avgRatingString,
-          totalRatingsString: data.totalRatingsString,
-          parentId: data.parentId,
-          nextCloseTime: data.nextCloseTime,
-          opened: data.opened,
-        },
-      },
-    ]);
-    console.log(restaurantData);
+  const onSubmit = async (data) => {
+    // setRestaurantData([
+    //   ...restaurantData,
+    //   {
+    //     name: data.name,
+    //     cloudinaryImageId: data.cloudinaryImageId,
+    //     locality: data.locality,
+    //     areaName: data.areaName,
+    //     costForTwo: data.costForTwo,
+    //     cuisines: data.cuisines,
+    //     avgRating: data.avgRating,
+    //     avgRatingString: data.avgRatingString,
+    //     totalRatingsString: data.totalRatingsString,
+    //     parentId: data.parentId,
+    //     nextCloseTime: data.nextCloseTime,
+    //     opened: data.opened,
+    //   },
+    // ]);
+    try {
+      data.cuisines = data.cuisines.split(",");
+
+      let payload = {
+        name: data.name,
+        cloudinaryImageId: data.cloudinaryImageId,
+        locality: data.locality,
+        areaName: data.areaName,
+        costForTwo: data.costForTwo,
+        cuisines: data.cuisines,
+        avgRating: data.avgRating,
+        avgRatingString: data.avgRatingString,
+        totalRatingsString: data.totalRatingsString,
+        parentId: data.parentId,
+        nextCloseTime: data.nextCloseTime,
+        opened: data.opened,
+      };
+      const response = await fetch("http://localhost:9000/api/v1/restaurant", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const result = await response.json();
+      setRestaurantData([...restaurantData, result.data.restaurant]);
+      alert("Restaurant created succesfully");
+      console.log(result);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
@@ -54,17 +77,7 @@ const CreateRestaurantTwo = () => {
         {errors.cloudinaryImageId && (
           <p className="errors">{errors.cloudinaryImageId.message}</p>
         )}
-        <input
-          type="email"
-          {...register("email", {
-            required: "Email is required",
-            pattern: {
-              value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-              message: "Enter a valid email",
-            },
-          })}
-        ></input>
-        {errors.email && <p className="errors">{errors.email.message}</p>}
+        <input type="text" {...register("email")}></input>
         <input type="text" {...register("locality")} placeholder="Locality" />
         <input type="text" {...register("areaName")} placeholder="Area Name" />
         <input

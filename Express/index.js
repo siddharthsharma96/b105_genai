@@ -1,5 +1,7 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
+app.use(cors());
 const restaurantRouter = require("./Routes/restaurantRoutes");
 const requestTimeOfHit = require("./Middlewares/requestTimeOfHit");
 const authRoutes = require("./Routes/authRoutes");
